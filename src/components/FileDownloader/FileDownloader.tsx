@@ -1,25 +1,56 @@
 import React from "react";
 import "./FileDownloader.css";
-import { useFilesData } from "../../hooks/useFilesData";
 
-const FileDownloader: React.FC = () => {
-  const { filesData, loading, error } = useFilesData("/mock-data/files.json");
+interface File {
+  name: string;
+  device: string;
+  path: string;
+  status: string;
+}
+
+interface FileDownloaderProps {
+  filesData: File[];
+}
+
+const FileDownloader: React.FC<FileDownloaderProps> = ({ filesData }) => {
+  if (!filesData || filesData.length === 0) {
+    return <p>No files available.</p>;
+  }
 
   return (
-    <div className="file-downloader">
-      {loading && <p>Loading files...</p>}
-      {error && <p className="error">Error: {error}</p>}
-      {!loading && !error && (
-        <ul>
-          {filesData.map((file) => (
-            <li key={file.name}>
-              <strong>{file.name}</strong> on <strong>{file.device}</strong> —{" "}
+    <table className="file-table" aria-label="File download table">
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>Name</th>
+          <th>Device</th>
+          <th>Path</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filesData.map((file) => (
+          <tr key={`${file.device}-${file.path}`}>
+            <td>
+              <input type="checkbox" aria-label={`Select ${file.name}`} />
+            </td>
+            <td>{file.name}</td>
+            <td>{file.device}</td>
+            <td>{file.path}</td>
+            <td className="status">
               {file.status}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+              {file.status === "available" && (
+                <span
+                  className="green-tick"
+                  role="img"
+                  aria-label="Available"
+                ></span>
+              )}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };
 
