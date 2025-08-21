@@ -107,3 +107,13 @@ Before running the project, make sure you have the following installed:
 
 - ✅ **Unit Testing**
   - Unit tests written to cover implemented code and functionalities.
+
+## Screenshots for reference
+<img width="1437" height="729" alt="None selected" src="https://github.com/user-attachments/assets/f2a5b758-83b7-4cbc-b8d6-14d7d46101ce" />
+<img width="1440" height="728" alt="Single selection" src="https://github.com/user-attachments/assets/af423cc6-47a8-4101-afab-268930f29a8e" />
+<img width="1440" height="772" alt="Download selected " src="https://github.com/user-attachments/assets/5a4ffcef-5926-440a-a8ed-50ea46e0da9c" />
+
+## Lighthouse report:
+<img width="1434" height="776" alt="Lighthouse report" src="https://github.com/user-attachments/assets/9209a578-e928-4fc5-9b38-3fd19ed61c64" />
+
+
