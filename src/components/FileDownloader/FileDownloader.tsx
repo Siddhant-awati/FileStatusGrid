@@ -92,9 +92,11 @@ const FileDownloader: React.FC<FileDownloaderProps> = ({
         </label>
 
         <button
+          type="button"
           className="primary download-btn touch-target"
           onClick={handleDownload}
           disabled={selectedKeys.length === 0}
+          aria-label="Download selected files"
         >
           <img
             src="/assets/download-icon.png"
