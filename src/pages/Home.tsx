@@ -11,6 +11,9 @@ const URL = "/mock-data/files-one.json"
 
 For all available files
 const URL = "/mock-data/files-two.json"
+
+For pagination
+const URL = "/mock-data/files-pages.json"
 */
 
 const URL = "/mock-data/files.json";

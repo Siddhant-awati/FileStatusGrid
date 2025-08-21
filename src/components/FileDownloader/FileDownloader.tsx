@@ -14,11 +14,14 @@ interface FileDownloaderProps {
   downloadFiles?: (files: FileModel[]) => void;
 }
 
+const PAGE_SIZE = 10;
+
 const FileDownloader: React.FC<FileDownloaderProps> = ({
   filesData,
   downloadFiles,
 }) => {
   const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const availableFiles = useMemo(
     () => getAvailableFiles(filesData),
@@ -32,6 +35,12 @@ const FileDownloader: React.FC<FileDownloaderProps> = ({
     () => getSelectAllState(selectedKeys, availableKeys),
     [selectedKeys, availableKeys]
   );
+
+  const totalPages = Math.ceil(filesData.length / PAGE_SIZE);
+  const paginatedFiles = useMemo(() => {
+    const start = (currentPage - 1) * PAGE_SIZE;
+    return filesData.slice(start, start + PAGE_SIZE);
+  }, [filesData, currentPage]);
 
   const toggleSelectAll = () => {
     setSelectedKeys(selectAllState === "all" ? [] : availableKeys);
@@ -110,19 +119,17 @@ const FileDownloader: React.FC<FileDownloaderProps> = ({
           </tr>
         </thead>
         <tbody>
-          {filesData.map((file) => {
+          {paginatedFiles.map((file) => {
             const key = getFileKey(file);
             const isSelected = selectedKeys.includes(key);
             const isAvailable = file.status === "available";
 
             const handleRowClick = (e: React.MouseEvent) => {
-              // Ignore clicks if directly on checkbox or if file not available
               if (
                 (e.target as HTMLElement).tagName.toLowerCase() === "input" ||
                 !isAvailable
-              ) {
+              )
                 return;
-              }
               toggleFile(file);
             };
 
@@ -168,6 +175,28 @@ const FileDownloader: React.FC<FileDownloaderProps> = ({
           })}
         </tbody>
       </table>
+
+      {totalPages > 1 && (
+        <div className="pagination">
+          <button
+            className="page-btn"
+            onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <span className="page-info">
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            className="page-btn"
+            onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
+        </div>
+      )}
     </section>
   );
 };

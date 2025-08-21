@@ -1,69 +1,109 @@
-# React + TypeScript + Vite
+# FileStatusGrid
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend assignment solution built with **React**, **TypeScript**, **Vite**, and **CSS**.
+The application presents file status data in a structured, interactive grid—engineered with a strong emphasis on accessibility, testability, and clean architectural principles.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **React** – Component-based UI
+- **TypeScript** – Strongly typed code
+- **Vite** – Fast build tool and dev server
+- **CSS** – Styling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📋 Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Before running the project, make sure you have the following installed:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Node.js** (version 18 or higher recommended)  
+  👉 [Download Node.js](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- A modern web browser (Chrome, Firefox, Edge, Safari)
+- **Git** to clone the repository  
+  👉 [Download Git](https://git-scm.com/)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Project Setup
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Clone the repository
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+`git clone https://github.com/Siddhant-awati/FileStatusGrid.git`
+
+### 2. Navigate to the project folder
+
+`cd FileStatusGrid`
+
+### 3. Install dependencies
+
+`npm install`
+
+### 4. Start the development server
+
+`npm run dev`
+
+### 5. Open the application
+
+`Visit http://localhost:5173/ in your browser.`
+
+### 6. Run unit tests
+
+`npm run test`
+
+### 7. Check for lint issues
+
+`npm run lint`
+
+## ✅ Requirements Implemented
+
+- ✔ **Only files with a status of `"available"` can be downloaded.**
+
+- ✔ **Select-all checkbox behavior:**
+
+  - Unselected if no items are selected
+  - Selected if all items are selected
+  - Indeterminate if some but not all items are selected
+
+- ✔ **"Selected X" text updates dynamically**, showing `"None Selected"` when nothing is selected.
+
+- ✔ **Clicking the select-all checkbox:**
+
+  - Selects all items if none or some are selected
+  - De-selects all items if all are selected
+
+- ✔ **Clicking "Download Selected" triggers an alert** listing the path and device of all selected files.
+
+- ✔ **Rows change color on hover and when selected**
+  - Only `available` rows show hover effect and rest rows are disabled
+
+## 📌 Assumptions & Considerations
+
+1. **API Data Simulation**
+
+   - The table component is assumed to consume data from an API call.
+   - Mocked data is used to simulate the API response:  
+     `public/mock-data/files.json`
+
+2. **Pagination Logic**
+   - Pagination is implemented when the number of records exceeds 10.
+   - To test pagination,
+     Modify `Home.tsx` (`src/pages/Home.tsx`).  
+     update the URL variable to:  
+      `const URL = "/mock-data/files-pages.json";`
+
+## Testing Summary
+
+- ✅ **Manual Testing**
+
+  - All functionalities were tested manually.
+  - No errors or bugs were found during manual testing.
+
+- ✅ **Accessibility Testing**
+
+  - Keyboard navigation verified.
+  - VoiceOver testing completed.
+  - Google Chrome Lighthouse accessibility checks passed.
+
+- ✅ **Unit Testing**
+  - Unit tests written to cover implemented code and functionalities.

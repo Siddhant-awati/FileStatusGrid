@@ -1,0 +1,112 @@
+{
+  "files": [
+    {
+      "name": "smss.exe",
+      "device": "Mario",
+      "path": "\\Device\\HarddiskVolume2\\Windows\\System32\\smss.exe",
+      "status": "scheduled"
+    },
+    {
+      "name": "netsh.exe",
+      "device": "Luigi",
+      "path": "\\Device\\HarddiskVolume2\\Windows\\System32\\netsh.exe",
+      "status": "available"
+    },
+    {
+      "name": "7za.exe",
+      "device": "Toad",
+      "path": "\\Device\\HarddiskVolume1\\temp\\7za.exe",
+      "status": "scheduled"
+    },
+    {
+      "name": "uxtheme.dll",
+      "device": "Peach",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\uxtheme.dll",
+      "status": "available"
+    },
+    {
+      "name": "aries.sys",
+      "device": "Daisy",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\aries.sys",
+      "status": "scheduled"
+    },
+    {
+      "name": "cryptbase.dll",
+      "device": "Yoshi",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\cryptbase.dll",
+      "status": "scheduled"
+    },
+    {
+      "name": "smss1.exe",
+      "device": "Mario1",
+      "path": "\\Device\\HarddiskVolume2\\Windows\\System32\\smss1.exe",
+      "status": "scheduled"
+    },
+    {
+      "name": "netsh1.exe",
+      "device": "Luigi1",
+      "path": "\\Device\\HarddiskVolume2\\Windows\\System32\\netsh1.exe",
+      "status": "available"
+    },
+    {
+      "name": "7za1.exe",
+      "device": "Toad1",
+      "path": "\\Device\\HarddiskVolume1\\temp\\7za1.exe",
+      "status": "scheduled"
+    },
+    {
+      "name": "uxtheme1.dll",
+      "device": "Peach1",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\uxtheme.dll1",
+      "status": "available"
+    },
+    {
+      "name": "aries1.sys",
+      "device": "Daisy1",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\aries.sys1",
+      "status": "scheduled"
+    },
+    {
+      "name": "cryptbase1.dll",
+      "device": "Yoshi1",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\cryptbase.dll1",
+      "status": "scheduled"
+    },
+    {
+      "name": "smss11.exe",
+      "device": "Mario11",
+      "path": "\\Device\\HarddiskVolume2\\Windows\\System32\\smss11.exe",
+      "status": "scheduled"
+    },
+    {
+      "name": "netsh11.exe",
+      "device": "Luigi11",
+      "path": "\\Device\\HarddiskVolume2\\Windows\\System32\\netsh11.exe",
+      "status": "available"
+    },
+    {
+      "name": "7za11.exe",
+      "device": "Toad11",
+      "path": "\\Device\\HarddiskVolume1\\temp\\7za11.exe",
+      "status": "scheduled"
+    },
+    {
+      "name": "uxtheme11.dll",
+      "device": "Peach11",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\uxtheme.dll11",
+      "status": "available"
+    },
+    {
+      "name": "aries11.sys",
+      "device": "Daisy11",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\aries.sys11",
+      "status": "scheduled"
+    },
+    {
+      "name": "cryptbase11.dll",
+      "device": "Yoshi11",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\cryptbase.dll11",
+      "status": "scheduled1"
+    }
+  ]
+}
