@@ -57,7 +57,7 @@ describe("getAvailableFiles", () => {
   it("returns empty array if none are available", () => {
     const unavailable: FileModel[] = mockFiles.map((f) => ({
       ...f,
-      status: "scheduled" as "scheduled",
+      status: "scheduled" as const,
     }));
     expect(getAvailableFiles(unavailable)).toEqual([]);
   });

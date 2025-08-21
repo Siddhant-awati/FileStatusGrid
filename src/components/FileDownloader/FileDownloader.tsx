@@ -24,12 +24,10 @@ const FileDownloader: React.FC<FileDownloaderProps> = ({
     () => getAvailableFiles(filesData),
     [filesData]
   );
-
   const availableKeys = useMemo(
     () => availableFiles.map(getFileKey),
     [availableFiles]
   );
-
   const selectAllState = useMemo(
     () => getSelectAllState(selectedKeys, availableKeys),
     [selectedKeys, availableKeys]
@@ -65,27 +63,27 @@ const FileDownloader: React.FC<FileDownloaderProps> = ({
   return (
     <section className="wrapper">
       <div className="file-controls">
-        <input
-          type="checkbox"
-          id="select-all"
-          className="select-file"
-          checked={selectAllState === "all"}
-          ref={(el) => {
-            if (el) el.indeterminate = selectAllState === "some";
-          }}
-          onChange={toggleSelectAll}
-          aria-checked={
-            selectAllState === "some" ? "mixed" : selectAllState === "all"
-          }
-        />
-        <label htmlFor="select-all" className="cb-label">
+        <label htmlFor="select-all" className="touch-target cb-label">
+          <input
+            type="checkbox"
+            id="select-all"
+            className="select-file"
+            checked={selectAllState === "all"}
+            ref={(el) => {
+              if (el) el.indeterminate = selectAllState === "some";
+            }}
+            onChange={toggleSelectAll}
+            aria-checked={
+              selectAllState === "some" ? "mixed" : selectAllState === "all"
+            }
+          />
           {selectedKeys.length > 0
             ? `Selected ${selectedKeys.length}`
             : "None Selected"}
         </label>
 
         <button
-          className="primary download-btn"
+          className="primary download-btn touch-target"
           onClick={handleDownload}
           disabled={selectedKeys.length === 0}
         >
@@ -106,7 +104,9 @@ const FileDownloader: React.FC<FileDownloaderProps> = ({
             <th scope="col">Name</th>
             <th scope="col">Device</th>
             <th scope="col">Path</th>
-            <th scope="col">Status</th>
+            <th className="status" scope="col">
+              Status
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -115,10 +115,30 @@ const FileDownloader: React.FC<FileDownloaderProps> = ({
             const isSelected = selectedKeys.includes(key);
             const isAvailable = file.status === "available";
 
+            const handleRowClick = (e: React.MouseEvent) => {
+              // Ignore clicks if directly on checkbox or if file not available
+              if (
+                (e.target as HTMLElement).tagName.toLowerCase() === "input" ||
+                !isAvailable
+              ) {
+                return;
+              }
+              toggleFile(file);
+            };
+
             return (
-              <tr key={key} className={isSelected ? "selected" : ""}>
+              <tr
+                key={key}
+                className={`${isSelected ? "selected" : ""} ${
+                  isAvailable ? "clickable" : "disabled"
+                }`}
+                onClick={handleRowClick}
+              >
                 <td>
-                  <label htmlFor={`checkbox-${key}`}>
+                  <label
+                    htmlFor={`checkbox-${key}`}
+                    className={`touch-target ${!isAvailable ? "disabled" : ""}`}
+                  >
                     <input
                       type="checkbox"
                       id={`checkbox-${key}`}
@@ -127,8 +147,6 @@ const FileDownloader: React.FC<FileDownloaderProps> = ({
                       disabled={!isAvailable}
                       onChange={() => toggleFile(file)}
                       aria-label={`Select file: ${file.name}`}
-                      aria-checked={isSelected}
-                      aria-disabled={!isAvailable}
                     />
                   </label>
                 </td>
@@ -136,7 +154,6 @@ const FileDownloader: React.FC<FileDownloaderProps> = ({
                 <td>{file.device}</td>
                 <td>{file.path}</td>
                 <td className="status">
-                  <span>{file.status}</span>
                   {isAvailable && (
                     <span
                       className="green-tick"
@@ -144,6 +161,7 @@ const FileDownloader: React.FC<FileDownloaderProps> = ({
                       aria-label="Available"
                     ></span>
                   )}
+                  <span className={file.status}>{file.status}</span>
                 </td>
               </tr>
             );
