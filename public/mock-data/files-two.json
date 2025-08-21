@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "name": "firefox.exe",
+      "device": "Mario",
+      "path": "\\Device\\HarddiskVolume3\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "status": "available"
+    },
+    {
+      "name": "chrome.exe",
+      "device": "Luigi",
+      "path": "\\Device\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "status": "available"
+    },
+    {
+      "name": "wordpad.exe",
+      "device": "Peach",
+      "path": "\\Device\\Windows\\System32\\wordpad.exe",
+      "status": "available"
+    },
+    {
+      "name": "powershell.exe",
+      "device": "Yoshi",
+      "path": "\\Device\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "status": "available"
+    },
+    {
+      "name": "paint.exe",
+      "device": "Daisy",
+      "path": "\\Device\\Windows\\System32\\mspaint.exe",
+      "status": "available"
+    },
+    {
+      "name": "edge.exe",
+      "device": "Bowser",
+      "path": "\\Device\\Microsoft\\Edge\\Application\\msedge.exe",
+      "status": "available"
+    },
+    {
+      "name": "onenote.exe",
+      "device": "Wario",
+      "path": "\\Device\\Microsoft Office\\root\\Office16\\ONENOTE.EXE",
+      "status": "available"
+    },
+    {
+      "name": "teams.exe",
+      "device": "Toad",
+      "path": "\\Device\\Microsoft\\Teams\\current\\Teams.exe",
+      "status": "available"
+    }
+  ]
+}

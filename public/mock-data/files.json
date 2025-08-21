@@ -1,58 +1,40 @@
 {
   "files": [
     {
-      "id": "file-001",
       "name": "smss.exe",
       "device": "Mario",
       "path": "\\Device\\HarddiskVolume2\\Windows\\System32\\smss.exe",
-      "status": "scheduled",
-      "lastModified": "2025-08-20T10:00:00Z",
-      "size": 20480
+      "status": "scheduled"
     },
     {
-      "id": "file-002",
       "name": "netsh.exe",
       "device": "Luigi",
       "path": "\\Device\\HarddiskVolume2\\Windows\\System32\\netsh.exe",
-      "status": "available",
-      "lastModified": "2025-08-19T14:30:00Z",
-      "size": 51200
+      "status": "available"
     },
     {
-      "id": "file-003",
-      "name": "uxtheme.dll",
-      "device": "Peach",
-      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\uxtheme.dll",
-      "status": "available",
-      "lastModified": "2025-08-18T09:15:00Z",
-      "size": 102400
-    },
-    {
-      "id": "file-004",
-      "name": "aries.sys",
-      "device": "Daisy",
-      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\aries.sys",
-      "status": "scheduled",
-      "lastModified": "2025-08-20T11:45:00Z",
-      "size": 40960
-    },
-    {
-      "id": "file-005",
-      "name": "cryptbase.dll",
-      "device": "Yoshi",
-      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\cryptbase.dll",
-      "status": "scheduled",
-      "lastModified": "2025-08-20T12:00:00Z",
-      "size": 30720
-    },
-    {
-      "id": "file-006",
       "name": "7za.exe",
       "device": "Toad",
       "path": "\\Device\\HarddiskVolume1\\temp\\7za.exe",
-      "status": "scheduled",
-      "lastModified": "2025-08-20T13:00:00Z",
-      "size": 153600
+      "status": "scheduled"
+    },
+    {
+      "name": "uxtheme.dll",
+      "device": "Peach",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\uxtheme.dll",
+      "status": "available"
+    },
+    {
+      "name": "aries.sys",
+      "device": "Daisy",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\aries.sys",
+      "status": "scheduled"
+    },
+    {
+      "name": "cryptbase.dll",
+      "device": "Yoshi",
+      "path": "\\Device\\HarddiskVolume1\\Windows\\System32\\cryptbase.dll",
+      "status": "scheduled"
     }
   ]
 }

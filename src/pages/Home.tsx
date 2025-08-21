@@ -3,8 +3,17 @@ import "./Home.css";
 import FileDownloader from "../components/FileDownloader/FileDownloader";
 import { useFilesData } from "../hooks/useFilesData";
 
+/*
+Change this URL to load other test data
+For all scheduled files
+const URL = "/mock-data/files-one.json"
+
+For all available files
+const URL = "/mock-data/files-two.json"
+   */
+const URL = "/mock-data/files.json";
 const Home: React.FC = () => {
-  const { filesData, loading, error } = useFilesData("/mock-data/files.json");
+  const { filesData, loading, error } = useFilesData(URL);
 
   return (
     <div className="content">

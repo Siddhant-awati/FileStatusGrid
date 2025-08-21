@@ -17,14 +17,21 @@ label.cb-label {
 }
 
 button.primary {
-  padding: 10px 20px 10px 10px;
+  padding: 8px 20px 8px 10px;
   font-size: 1rem;
   background-color: #006bc0;
   color: white;
   border: 0;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: 600;
   transition: background-color 0.2s ease-in-out;
+}
+button.primary:disabled,
+button.primary:disabled:hover,
+button.primary:disabled:focus {
+  background-color: gray;
+  cursor: not-allowed;
 }
 button.primary:hover,
 button.primary:focus {
@@ -71,8 +78,8 @@ img.download-icon {
   background-color: #f5f5f5;
 }
 
-.file-table tr.active {
-  background-color: #aee6ff;
+.file-table tr.selected {
+  background-color: #d5ecff;
 }
 
 .green-tick {
@@ -100,7 +107,6 @@ input.select-file {
   width: 22px;
   cursor: pointer;
   vertical-align: top;
-  margin-right: 10px;
 }
 input.select-file:disabled {
   cursor: not-allowed;
